@@ -18,14 +18,13 @@ describe('User can calculate BMI', () => {
     });
 
     it('by inputing his weight and height', async () => {
-        // await browser.selectOption("select[id='mySelect']", {option: 'metric' })
 
         await browser.fillIn("input[id='weight-in-kgs']", { with: "95" })
         await browser.fillIn("input[id='height-in-cm']", { with: "185" })
 
         await browser.clickOnButton("button")
         let content = await browser.getContent("span[id='display_value']")
-        expect(content).to.eql('Your BMI is 27.75');
+        expect(content).to.eql('Your BMI is 27.76');
     });
 });
 
